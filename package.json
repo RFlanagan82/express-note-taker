@@ -1,25 +1,14 @@
 {
-  "name": "express-note-taker",
+  "name": "note-taker",
   "version": "1.0.0",
-  "description": "Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RFlanagan82/express-note-taker.git"
-  },
-  "keywords": [],
-  "author": "Ryan Flanagan",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RFlanagan82/express-note-taker/issues"
-  },
-  "homepage": "https://github.com/RFlanagan82/express-note-taker#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.4"
+    "express": "^4.16.4"
   }
 }
