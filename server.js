@@ -38,26 +38,24 @@ app.get("/api/notes", function(req, res){
 //Should receive a new note to save on request body, add it to db.json file and return the new note to the client.
 app.post("/api/notes", function(req, res){
     //automatically destructures the array into strings and getting it from the body
-    const {title, text} = req.body;
-    const id = Math.ceil(Math.random() * 1000)
-    const newNote = {title, text, id}
-    
-    let noteArray = []
-    fs.readFile(noteTable, "utf8", function(err, log){
-        console.log("checking log" + log)
-        noteArray = log || [];
-    
-    });
+    try{
+        newNote = fs.readFileSync("db/db.json", "utf8");
+        newNote = JSON.parse(newNote)
+        req.body.id = Math.ceil(Math.random() * 1000)
+        newNote.push(req.body);
+        newNote = JSON.stringify(newNote);
+        fs.writeFile("db/db.json", newNote, "utf8",function(err){
+            if(err) throw err;
+        });
+        res.json(JSON.parse(newNote));
+    } catch (error) {
+        console.log("Note wasn't added.")
+    }
+});
  
-    console.log(noteArray);
-    noteArray.push(newNote);
+    
 
-    fs.writeFile(noteTable, JSON.stringify(noteArray), function(err){
-        if(err) throw err;
-        return res.sendFile(path.join(__dirname, "db/db.json"));
-    });
 
-})
 
 
 
