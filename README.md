@@ -40,7 +40,7 @@ On 10-1-2020, classmate Alex Flemming helped me correctly format my app.post rou
 
 I used Math.ceil(Math.random() * 1000).
 
-![](./public/assets/public/assets/Using-Math.ceil_Math.random-to-generate-id.png)
+![](./public/assets/Using-Math.ceil_Math.random-to-generate-id.png)
 
 On 10-1-2020, classmate Brandon Walker helped me troubleshoot my app.delete function. We ultimately found my error where I didn't call the :id value within the "api/notes" parameter so the note could not be deleted because it was returning as a 404.
 
